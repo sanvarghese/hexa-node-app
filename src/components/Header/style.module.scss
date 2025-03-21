@@ -1,0 +1,28 @@
+.header_wrap {
+    padding: 15px 0;
+    background: linear-gradient(180deg, rgba(9, 15, 29, 0.898), rgba(9, 15, 29, 0));
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .logo {
+        svg {
+            width: 121px;
+            fill: #fff;
+        }
+    }
+    .header_inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    &.sticky {
+        background: #fff;
+        .logo {
+            svg {
+                fill: #020a19;
+            }
+        }
+    }
+}

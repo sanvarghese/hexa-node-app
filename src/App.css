@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Mulish", sans-serif;
+}
+.container {
+	max-width: 1300px;
+	width: 88%;
+	margin: 0 auto;
+}
+.btn {
+	padding: 10px 26px;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 15px;
+	line-height: 24px;
+	text-transform: uppercase;
+	border-radius: 3px;
+	white-space: nowrap;
+	color: #fff;
+	background-color: #dd0735;
+	transition: all 0.25s ease-in-out;
+}
+.btn:hover {
+	background-color: #bb022a;
+}
