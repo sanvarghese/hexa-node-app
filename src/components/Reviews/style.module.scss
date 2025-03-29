@@ -1,0 +1,256 @@
+.reviews {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+
+    &__title {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 50px;
+
+        color: #020a19;
+    }
+
+    &__carousel {
+        margin-bottom: 60px;
+        position: relative;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 40px;
+    }
+
+    &__card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 30px;
+        margin: 0 20px;
+
+        &:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &__image {
+        // width: 180px;
+        // height: 180px;
+        // border-radius: 50%;
+        border-radius: 30px 0 0 30px;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__text {
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #000000;
+        margin: 0;
+        flex: 1;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #efefef;
+    }
+
+    &__info {
+        h3 {
+
+            font-size: 24px;
+            font-weight: 600;
+            color: #020a19;
+            margin: 0 0 5px 0;
+        }
+
+        span {
+            font-size: 18px;
+            color: #666;
+        }
+    }
+
+    &__logos {
+        padding: 10px 0;
+        margin: 0 -10px;
+    }
+
+    &__logo {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(0%);
+            opacity: 1;
+            transition: all 0.3s ease;
+
+            &:hover {
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+        }
+    }
+
+    :global {
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            color: #020a19;
+            transition: all 0.3s ease;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &:hover {
+                background: #020a19;
+                color: #fff;
+            }
+
+            &:after {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+
+        .swiper-button-next {
+            right: 0;
+        }
+
+        .swiper-button-prev {
+            left: 0;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .reviews {
+        padding: 60px 0;
+
+        &__title {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        &__carousel {
+            padding: 0 15px;
+        }
+
+        &__card {
+            padding: 25px;
+            gap: 30px;
+            margin: 0 15px;
+        }
+
+        &__image {
+            width: 150px;
+            height: 150px;
+        }
+
+        &__text {
+            font-size: 18px;
+        }
+
+        &__info {
+            h3 {
+                font-size: 20px;
+            }
+
+            span {
+                font-size: 16px;
+            }
+        }
+
+        &__logo {
+            height: 50px;
+            padding: 0 10px;
+        }
+
+        :global {
+            .swiper-button-next {
+                right: -20px;
+            }
+
+            .swiper-button-prev {
+                left: -20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews {
+        padding: 40px 0;
+
+        &__title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        &__carousel {
+            padding: 0 10px;
+        }
+
+        &__card {
+            flex-direction: column;
+            text-align: center;
+            padding: 25px 20px;
+            margin: 0 10px;
+        }
+
+        &__image {
+            width: 120px;
+            height: 120px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+
+        &__info {
+            h3 {
+                font-size: 18px;
+            }
+
+            span {
+                font-size: 14px;
+            }
+        }
+
+        &__logo {
+            height: 50px;
+            padding: 0 0;
+        }
+
+        :global {
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                display: none;
+            }
+        }
+    }
+}
