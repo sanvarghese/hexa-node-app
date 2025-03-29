@@ -4,11 +4,13 @@
 	padding: 0;
 	font-family: "Mulish", sans-serif;
 }
+
 .container {
-	max-width: 1300px;
+	max-width: 1500px;
 	width: 88%;
 	margin: 0 auto;
 }
+
 .btn {
 	padding: 10px 26px;
 	outline: none;
@@ -26,6 +28,7 @@
 	background-color: #dd0735;
 	transition: all 0.25s ease-in-out;
 }
+
 .btn:hover {
 	background-color: #bb022a;
 }
