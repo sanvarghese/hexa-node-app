@@ -27,7 +27,8 @@ const Footer = () => {
                   </button>
                 </form>
               </div>
-              <p className={style.credit_content}>No credit cards required.<a className={style.demo_content} role="link" href="https://www.hexnode.com/mobile-device-management/request-demo/">Request a demo</a></p>
+              <p className={style.credit_content}>No credit cards required.<a className={style.demo_content} role="link" href="https://www.hexnode.com/mobile-device-management/request-demo/">Request a demo </a></p>
+
             </div>
           </div>
         </div>
