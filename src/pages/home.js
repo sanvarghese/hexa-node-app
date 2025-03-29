@@ -1,11 +1,15 @@
 import React from "react";
 import style from "./home.module.scss";
+
 import bannerImage from "../assets/images/hexnode-kiosk.webp";
 import idcImage from "../assets/images/idc.webp";
 import gartnerImage from "../assets/images/gartner.webp";
 import forresterImage from "../assets/images/forrester.webp";
+
 import KisokModes from "../components/KisokModes";
 import Possibilities from "../components/Possibilities";
+import Reviews from "../components/Reviews";
+import Platform from "../components/Platforms";
 
 export default function Home() {
 	const awards = [
@@ -85,7 +89,13 @@ export default function Home() {
 			<KisokModes />
 
 			{/* Possibilities section */}
-			<Possibilities/>			
+			<Possibilities />
+
+			{/* Reviews section */}
+			<Reviews />
+
+			{/* Platform section */}
+			<Platform/>
 
 		</div>
 	);
