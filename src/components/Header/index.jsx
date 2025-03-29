@@ -1,20 +1,28 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./style.module.scss";
 
 export default function Header() {
 	const headerRef = useRef(null);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 	useEffect(() => {
 		window.addEventListener("scroll", isSticky);
 		return () => {
 			window.removeEventListener("scroll", isSticky);
 		};
 	});
+
 	const isSticky = (e) => {
 		const scrollTop = window.scrollY;
 		scrollTop >= 1
 			? headerRef.current.classList.add(style.sticky)
 			: headerRef.current.classList.remove(style.sticky);
 	};
+
+	const toggleMenu = () => {
+		setIsMenuOpen(!isMenuOpen);
+	};
+
 	return (
 		<div className={style.header_wrap} ref={headerRef}>
 			<div className="container">
@@ -22,7 +30,7 @@ export default function Header() {
 					<a
 						className={style.logo}
 						aria-label="Hexnode"
-						href="https://www.hexnode.com/"
+						href="#"
 					>
 						<svg
 							version="1.1"
@@ -71,12 +79,36 @@ export default function Header() {
 							</g>
 						</svg>
 					</a>
+
 					<a
-						href="https://www.hexnode.com/mobile-device-management/cloud/signup/"
+						href="#"
 						className="btn"
 					>
 						14 Day Free Trial
 					</a>
+					<button
+						className={`${style.mobile_menu_btn} ${isMenuOpen ? style.active : ''}`}
+						onClick={toggleMenu}
+						aria-label="Toggle menu"
+					>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+			<div className={`${style.mobile_menu} ${isMenuOpen ? style.active : ''}`}>
+				<div className={style.mobile_menu_items}>
+
+					<a
+						href="#"
+						className="btn"
+					>
+						14 Day Free Trial
+					</a>
+
+					<a href="#">Login</a>
+
 				</div>
 			</div>
 		</div>
