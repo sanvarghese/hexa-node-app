@@ -5,6 +5,7 @@ import idcImage from "../assets/images/idc.webp";
 import gartnerImage from "../assets/images/gartner.webp";
 import forresterImage from "../assets/images/forrester.webp";
 import KisokModes from "../components/KisokModes";
+import Possibilities from "../components/Possibilities";
 
 export default function Home() {
 	const awards = [
@@ -37,7 +38,7 @@ export default function Home() {
 								Turn your devices into kiosks in a few minutes
 								with Hexnode UEM
 							</h1>
-							<form action={() => {}}>
+							<form action={() => { }}>
 								<input
 									type="email"
 									name="email"
@@ -81,9 +82,11 @@ export default function Home() {
 			</div>
 
 			{/* Kiosk modes section */}
-			<KisokModes/>
+			<KisokModes />
 
-			
+			{/* Possibilities section */}
+			<Possibilities/>			
+
 		</div>
 	);
 }
