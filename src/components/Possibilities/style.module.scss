@@ -1,0 +1,231 @@
+.possibilities {
+    padding: 80px 30px;
+    background-color: #fff;
+
+    &__title {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        color: #020a19;
+    }
+
+    &__content {
+        display: flex;
+        gap: 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
+
+    &__images {
+        flex: 0 0 500px;
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        overflow: hidden;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    &__imageWrapper {
+        display: none;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        height: 100%;
+        position: relative;
+
+        &.active {
+            display: block;
+            animation: slideInFromTop 0.5s ease-out;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 600px;
+        }
+    }
+
+    &__list {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__item {
+        border-bottom: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: #fff;
+
+        &.active {
+            // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-color: #e0e0e0;
+
+            .possibilities__header {
+                background: #f8f9fa;
+            }
+
+            .possibilities__description {
+                max-height: 800px;
+                opacity: 1;
+                padding: 20px;
+            }
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        cursor: pointer;
+        background: #fff;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: #f8f9fa;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #020a19;
+            margin: 0;
+            flex: 1;
+            padding-right: 20px;
+        }
+    }
+
+    &__description {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: #fff;
+        padding: 0 20px;
+
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+    }
+
+    &__cta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #ea0303;
+        font-weight: 600;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding-bottom: 10px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__arrow {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    &__item.active &__arrow {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .possibilities {
+        &__content {
+            gap: 40px;
+        }
+
+        &__item {
+            &.active {
+                .possibilities__description {
+                    max-height: 800px;
+                }
+            }
+        }
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .possibilities__imageWrapper {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+
+                img {
+                    min-height: 250px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .possibilities {
+        padding: 60px 0;
+
+        &__title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        &__header {
+            padding: 20px;
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+
+        &__description {
+            p {
+                font-size: 16px;
+            }
+
+            .possibilities__imageWrapper {
+                img {
+                    min-height: 200px;
+                }
+            }
+        }
+
+        &__cta {
+            font-size: 18px;
+            padding-bottom: 15px;
+        }
+    }
+}
