@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import style from "./style.module.scss";
@@ -23,13 +23,6 @@ import company7 from "../../assets/images/polaris.svg";
 import company8 from "../../assets/images/saic.svg";
 import company9 from "../../assets/images/wolt.svg";
 
-// import androidLogo from "../assets/images/android.svg";
-// import windowsLogo from "../assets/images/windows.svg";
-// import iosLogo from "../assets/images/ios.svg";
-// import androidTv from "../assets/images/android-tv.svg";
-// import appleTv from "../assets/images/apple-tv.svg";
-// import amazonFire from "../assets/images/amazon-fire.webp";
-
 const Reviews = () => {
 
     const reviews = [
@@ -39,6 +32,8 @@ const Reviews = () => {
             text: "Hexnode is of great value. Works great with Android and iOS!",
             name: "Justin Modrak",
             company: "Technology Coordinator",
+            details: "East Troy Community School District",
+
         },
         {
             id: 2,
@@ -68,26 +63,9 @@ const Reviews = () => {
         { id: 9, logo: company9 },
     ];
 
-    // Set the initial active mode after kioskModes is defined
-    // useEffect(() => {
-    //     setActiveMode(kioskModes[0]);
-    //     setActivePossibility(possibilities[0].id); // Set first possibility as active
-    // }, []);
 
-    // const handleModeChange = (mode) => {
-    //     setIsAnimating(true);
-    //     setKey((prev) => prev + 1); // Force re-render
-    //     setActiveMode(mode);
-
-    //     // Reset animation state after animation completes
-    //     setTimeout(() => {
-    //         setIsAnimating(false);
-    //     }, 500);
-    // };
-
-
-  return (
-        <div div className = { style.reviews } >
+    return (
+        <div div className={style.reviews} >
             <div className="container">
                 <h2 className={style.reviews__title}>
                     Why should you choose Hexnode?
@@ -121,6 +99,13 @@ const Reviews = () => {
                                         <div className={style.reviews__info}>
                                             <h3>{review.name}</h3>
                                             <span>{review.company}</span>
+                                            {review?.details && (
+                                                <>
+                                                    <br />
+                                                    <span>{review?.details}</span>
+                                                </>
+                                            )}
+
                                         </div>
                                     </div>
                                 </div>
@@ -162,8 +147,8 @@ const Reviews = () => {
                     </Swiper>
                 </div>
             </div>
-            </div>
-          )
+        </div>
+    )
 }
 
 export default Reviews
