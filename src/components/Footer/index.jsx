@@ -4,7 +4,6 @@ import style from "./style.module.scss";
 const Footer = () => {
   return (
     <div className={style.footer_wrap}>
-      {/* <div className="container"> */}
 
       <div className={style.footer_top_box}>
         <div className="container">
@@ -52,13 +51,11 @@ const Footer = () => {
             <p>
               Copyright © 2025 Mitsogo Inc. All Rights Reserved.
             </p>
-            {/* <div className={style.copy_right}></div> */}
           </div>
         </div>
       </div>
 
     </div>
-    // </div>
   )
 }
 
